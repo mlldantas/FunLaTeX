@@ -1,12 +1,12 @@
-\documentclass[border={50pt 50pt 50pt 50pt}]{standalone}
+\documentclass[border=50pt]{standalone}
 \usepackage{tikz}
 
 % Calculate the circle radius based on mass
 \newcommand{\calculateRadius}[1]{sqrt(#1/3.14159)}
 
 \begin{document}
-\fbox{
-\begin{tikzpicture}[scale=1]
+% \fbox{
+\begin{tikzpicture}[scale=0.95]
   % Stellar Black Hole
   \pgfmathsetmacro{\stellarBHmass}{0.03}
   \pgfmathsetmacro{\stellarBHradius}{\calculateRadius{\stellarBHmass}}
@@ -29,15 +29,15 @@
 
   % Mass Scale
   \draw[->] (-5,-16.5) -- (50,-16.5);
-  \node at (-4,-17) {Mass};
-  \foreach \x/\text in {0/Stellar BH, 10/IMBH, 30/SMBH} {
-    \draw (\x,-17) -- (\x,-17) node[above] {\text};
+  \node at (-4,-17) {\Huge{Mass}};
+  \foreach \x/\text in {0/\Huge{Stellar BH}, 10/\Huge{IMBH}, 30/\Huge{SMBH}} {
+    \draw (\x,-18) -- (\x,-18) node[above] {\text};
   }
-  \node at (0,-16) {3 $M_{\odot}$};
-  \node at (10,-16) {100 $M_{\odot}$};
-  \node at (30,-16) {100,000 $M_{\odot}$};
+  \node at (0,-16) {\Huge{3 $M_{\odot}$}};
+  \node at (10,-16) {\Huge{100 $M_{\odot}$}};
+  \node at (30,-16) {\Huge{100,000 $M_{\odot}$}};
   \node at (3, 12) {\Huge{\textbf{Scaled-size infographic}}};
   \node at (3, 10) {\Huge{\textbf{Typical sizes of Black Holes}}};
 \end{tikzpicture}
-}
+% }
 \end{document}
